@@ -6,6 +6,7 @@ import prettier from "prettier";
 import parser from "prettier/parser-babel";
 import codeShift from "jscodeshift";
 import Highlighter from "monaco-jsx-highlighter";
+import Button from "./button";
 
 interface CodeEditorProps {
   initialValue: string;
@@ -55,12 +56,12 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
 
   return (
     <div className="editor-wrapper">
-      <button
+      <Button
         className="button button-format is-primary is-small"
         onClick={onFormatClick}
       >
         Format
-      </button>
+      </Button>
       <MonacoEditor
         editorDidMount={onEditorDidMount}
         value={initialValue}
